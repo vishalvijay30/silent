@@ -4,8 +4,6 @@ package com.example.vishal.silent;
  * Created by vishal on 9/24/16.
  */
 
-import java.util.ArrayList;
-
 /**
  *  Look into adding a modify event option (allows user to change start or end time) 
  */
@@ -18,7 +16,6 @@ public class Appointment {
     private int endTimeHour; //hour value of the ending time
     private int endTimeMinute; //minute value of the ending time
     private int daysOfTheWeek; //Sunday = 1 ... Saturday = 7
-    private ArrayList<Appointment> appointmentCollection = new ArrayList<Appointment>();
 
     //constructor creates a new Appointment object with given attributes
     //An Appointment is an event in the user's schedule
@@ -47,17 +44,10 @@ public class Appointment {
         this.endTimeMinute = endTimeMinute;
         this.daysOfTheWeek = daysOfTheWeek;
 
-        addToCollection(this);
+
     }
 
-    //helper method to add an appointment to the collection
-    private void addToCollection(Appointment a) {
-        appointmentCollection.add(a);
-    }
 
-    public void removeAppointment(Appointment a) {
-        appointmentCollection.remove(a);
-    }
 
     public String getName() {
         return name;
