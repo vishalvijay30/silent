@@ -18,7 +18,7 @@ public class Appointment {
     private int endTimeHour; //hour value of the ending time
     private int endTimeMinute; //minute value of the ending time
     private int daysOfTheWeek; //Sunday = 1 ... Saturday = 7
-    private ArrayList<Appointment> appointmentCollection= new ArrayList<Appointment>();
+    private ArrayList<Appointment> appointmentCollection = new ArrayList<Appointment>();
 
     //constructor creates a new Appointment object with given attributes
     //An Appointment is an event in the user's schedule
@@ -29,8 +29,8 @@ public class Appointment {
         this.name = name;
 
         //24 hour clock conversion
-        if (startTimeAMPM.equals("PM")){
-            this.startTimeHour = startTimeHour+12;
+        if (startTimeAMPM.equals("PM")) {
+            this.startTimeHour = startTimeHour + 12;
         } else {
             this.startTimeHour = startTimeHour;
         }
@@ -108,10 +108,15 @@ public class Appointment {
     }
 
     public int getStartTimeMinuteCorrected() {
-        return startTimeMinute-1;
+        return startTimeMinute - 1;
     }
 
     public int getEndTmeMinuteCorrected() {
-        return endTimeMinute-1;
+        return endTimeMinute - 1;
+    }
+
+
+    public static void main(String[] args) {
+
     }
 }
