@@ -1,0 +1,51 @@
+package silent;
+
+public class AppointNet {
+
+	
+	public int fH, fM, tH, tM;
+	public int day;
+	public String name;
+	
+	public AppointNet(String n, int d, int fH, int fM, int tH, int tM)
+	{
+		name = n;
+		day = d;
+		this.fH = fH;
+		this.fM = fM;
+		this.tH = tH;
+		this.tM = tM;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getDay()
+	{
+		return day;
+	}
+	
+	public int getFromHour()
+	{
+		return fH;
+	}
+	
+	public int getToHour()
+	{
+		return tH;
+	}
+	
+	public int getFromMin()
+	{
+		return fM;
+	}
+	
+	public int getToMin()
+	{
+		return tM;
+	}
+	
+	
+}
