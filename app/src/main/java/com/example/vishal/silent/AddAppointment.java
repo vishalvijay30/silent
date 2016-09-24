@@ -1,19 +1,16 @@
 package com.example.vishal.silent;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
-import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class AddAppointment extends AppCompatActivity {
-    public Appointment appointment1;
+    public ArrayList<Appointment> appointments = new ArrayList<Appointment>();
     Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +23,8 @@ public class AddAppointment extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                appointment1 = new Appointment(appName.getText().toString(), timePicker1.getHour(),
-                        timePicker1.getMinute(), timePicker2.getHour(), timePicker2.getMinute(),7);
-                changeVolume();
+                appointments.add(new Appointment(appName.getText().toString(), timePicker1.getHour(),
+                        timePicker1.getMinute(), timePicker2.getHour(), timePicker2.getMinute(),7));
 
             }
         });
@@ -37,13 +33,16 @@ public class AddAppointment extends AppCompatActivity {
 
     }
 
-    public Appointment getAppointment() {
-        return appointment1;
+    public ArrayList<Appointment> getAppointment() {
+        return appointments;
     }
+
+    /*
     public void changeVolume(){
         SilenceEvent se = new SilenceEvent(AddAppointment.this, getAppointment());
         se.setMuteTime();
         se.setUnmuteTime();
     }
+    */
 
 }
