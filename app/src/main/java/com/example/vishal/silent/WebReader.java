@@ -21,7 +21,7 @@ public class WebReader extends AsyncTask {
     ArrayList<Appointment> events;
 
     //this is the table with all cell names
-    String table[][] = new String[6][6];
+    String table[][] = new String[6][7];
     String starter = "<table border = 1 cellspacing = 1 cellpadding = 5 font-size = 18>";
 
     public WebReader() {
