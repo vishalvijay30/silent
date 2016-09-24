@@ -59,7 +59,7 @@ public class WebReader {
                     int day = j + 1;
                     int time = i + 8;
                     //events.add(new AppointNet(table[i][j], day, time, 0, time + 1, 0));
-                    events.add(new Appointment(table[i][j], time, 0, time+1, 0, day, "AM", "AM"));
+                    events.add(new Appointment(table[i][j], time, 0, time+1, 0, day));
 
                 }
             }
@@ -150,7 +150,7 @@ public class WebReader {
                     //the times start at 9 AM, thus the "+ 8"
                     int time = tableInd / 7 + 8;
 
-                    an = new Appointment(name, time, 0, time + 1, 0, day, "AM", "AM");
+                    an = new Appointment(name, time, 0, time + 1, 0, day);
                     events.add(an);
                 }
 

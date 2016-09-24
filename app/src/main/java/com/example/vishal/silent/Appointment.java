@@ -20,26 +20,15 @@ public class Appointment {
     //constructor creates a new Appointment object with given attributes
     //An Appointment is an event in the user's schedule
     public Appointment(String name, int startTimeHour, int startTimeMinute, int endTimeHour,
-                       int endTimeMinute, int daysOfTheWeek, String startTimeAMPM,
-                       String endTimeAMPM) {
+                       int endTimeMinute, int daysOfTheWeek) {
 
         this.name = name;
 
-        //24 hour clock conversion
-        if (startTimeAMPM.equals("PM")) {
-            this.startTimeHour = startTimeHour + 12;
-        } else {
-            this.startTimeHour = startTimeHour;
-        }
+        this.startTimeHour=startTimeHour;
 
         this.startTimeMinute = startTimeMinute;
+        this.endTimeHour = endTimeHour;
 
-        //24 hour clock conversion
-        if (endTimeAMPM.equals("PM")) {
-            this.endTimeHour = endTimeHour + 12;
-        } else {
-            this.endTimeHour = endTimeHour;
-        }
 
         this.endTimeMinute = endTimeMinute;
         this.daysOfTheWeek = daysOfTheWeek;
