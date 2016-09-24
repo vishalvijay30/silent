@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Silent</string>
+    <string name="btnAddAppointment">Add an Event</string>
 </resources>
