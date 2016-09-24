@@ -106,4 +106,12 @@ public class Appointment {
     public void setDaysOfTheWeek(int daysOfTheWeek) {
         this.daysOfTheWeek = daysOfTheWeek;
     }
+
+    public int getStartTimeMinuteCorrected() {
+        return startTimeMinute-1;
+    }
+
+    public int getEndTmeMinuteCorrected() {
+        return endTimeMinute-1;
+    }
 }
