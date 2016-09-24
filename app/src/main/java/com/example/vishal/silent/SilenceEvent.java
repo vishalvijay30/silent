@@ -28,6 +28,7 @@ public class SilenceEvent {
         muteTime.set(Calendar.HOUR_OF_DAY, appointment.getStartTimeHour());
         muteTime.set(Calendar.MINUTE, appointment.getStartTimeMinute());
         muteTime.set(Calendar.SECOND,0);
+        System.out.println(muteTime.get(Calendar.HOUR_OF_DAY)+" "+muteTime.get(Calendar.MINUTE));
         Intent myIntent;
         if(fullSilence) {
             myIntent = new Intent(context, SilenceBR.class);
@@ -36,6 +37,7 @@ public class SilenceEvent {
             myIntent = new Intent(context, VibrateBR.class);
         }
         am.setExact(AlarmManager.RTC_WAKEUP, muteTime.getTimeInMillis() , PendingIntent.getBroadcast(context, 0, myIntent,PendingIntent.FLAG_UPDATE_CURRENT));
+
 
     }
 
