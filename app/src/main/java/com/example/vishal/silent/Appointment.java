@@ -21,7 +21,7 @@ public class Appointment {
             ArrayList<Appointment> eventCollection = new ArrayList<Appointment>();  
 
             //constructor creates a new Appointment object with given attributes
-            //An Appointment is an event in the user's schedule
+            //An Appointment is an event in the user's schedule set by the user
             public Appointment(String name, int startTimeHour, int startTimeMinute, 
                                String startTimeAMPM, String endTimeAMPM, int endTimeHour, 
                                int endTimeMinute, int daysOfTheWeek) { 
