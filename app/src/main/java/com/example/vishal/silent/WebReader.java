@@ -4,8 +4,6 @@ package com.example.vishal.silent;
  * Created by vishal on 9/24/16.
  */
 
-import android.os.AsyncTask;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -75,7 +73,7 @@ public class WebReader{
                     int day = j + 1;
                     int time = i + 8;
                     //events.add(new AppointNet(table[i][j], day, time, 0, time + 1, 0));
-                    if(!table[i][j].equals("-"))
+                    if(table[i][j] != null && !(table[i][j].equals("-")))
                     {
 
                         events.add(new Appointment(table[i][j], time, 0, time+1, 0, day));

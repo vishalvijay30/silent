@@ -11,5 +11,13 @@
     <string name="checkBoxFriday">Friday</string>
     <string name="checkBoxSaturday">Saturday</string>
     <string name="checkBoxSunday">Sunday</string>
+    <string name="radioButtonMonday">Monday</string>
+    <string name="radioButtonTuesday">Tuesday</string>
+    <string name="radioButtonWednesday">Wednesday</string>
+    <string name="radioButtonThursday">Thursday</string>
+    <string name="radioButtonFriday">Friday</string>
+    <string name="radioButtonSaturday">Saturday</string>
+    <string name="radioButtonSunday">Sunday</string>
+
 
 </resources>

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,9 +12,7 @@ import android.widget.Toast;
 
 import java.sql.Date;
 import java.util.ArrayList;
-
 import java.util.Calendar;
-import java.util.concurrent.ExecutionException;
 
 
 
@@ -179,7 +176,8 @@ public class MainScreen extends AppCompatActivity implements Runnable{
     {
         int day;
 
-        cal.setTime(new Date(System.currentTimeMillis()));
+        Date date = new Date(System.currentTimeMillis());
+        cal.setTime(date);
         day = cal.get(Calendar.DAY_OF_WEEK);
 
         return day;
@@ -187,14 +185,16 @@ public class MainScreen extends AppCompatActivity implements Runnable{
 
     public int getHour()
     {
-        cal.setTime(new Date(System.currentTimeMillis()));
+        Date date = new Date(System.currentTimeMillis());
+        cal.setTime(date);
         return cal.get(Calendar.HOUR_OF_DAY);
     }
 
 
     public int getMinute()
     {
-        cal.setTime(new Date(System.currentTimeMillis()));
+        Date date = new Date(System.currentTimeMillis());
+        cal.setTime(date);
         return cal.get(Calendar.MINUTE);
     }
 
