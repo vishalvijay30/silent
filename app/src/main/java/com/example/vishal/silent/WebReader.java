@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class WebReader extends AsyncTask {
+public class WebReader{
 
 
     // these objects are temporary. If this app becomes truly large, this has to be altered
@@ -30,15 +30,15 @@ public class WebReader extends AsyncTask {
 
     }
 
-    @Override
-    protected Object doInBackground(Object[] params) {
-        try {
-            loadEvents(params[0].toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//    @Override
+//    protected Object doInBackground(Object[] params) {
+//        try {
+//            loadEvents(params[0].toString());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 
 
 
@@ -75,7 +75,12 @@ public class WebReader extends AsyncTask {
                     int day = j + 1;
                     int time = i + 8;
                     //events.add(new AppointNet(table[i][j], day, time, 0, time + 1, 0));
-                    events.add(new Appointment(table[i][j], time, 0, time+1, 0, day));
+                    if(!table[i][j].equals("-"))
+                    {
+
+                        events.add(new Appointment(table[i][j], time, 0, time+1, 0, day));
+                        System.out.println(table[i][j]);
+                    }
 
                 }
             }
