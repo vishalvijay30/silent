@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -15,6 +17,7 @@ public class AddAppointment extends AppCompatActivity {
     public static ArrayList<Appointment> appointments = new ArrayList<Appointment>();
     Button btn;
     private int dayOfTheWeek = 7;
+    RadioGroup days;
     //RadioButton radioBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class AddAppointment extends AppCompatActivity {
         setContentView(R.layout.activity_add_appointment);
         btn = (Button) findViewById(R.id.addButton);
         //radioBtn = (RadioButton) findViewById()
+        days = (RadioGroup) findViewById(R.id.days);
         final EditText appName = (EditText) findViewById(R.id.nameAppointment);
         final TimePicker timePicker1 = (TimePicker) findViewById(R.id.timePickerStart);
         final TimePicker timePicker2 = (TimePicker) findViewById(R.id.timePickerEnd);
@@ -32,10 +36,62 @@ public class AddAppointment extends AppCompatActivity {
                         timePicker1.getMinute(), timePicker2.getHour(), timePicker2.getMinute(), dayOfTheWeek));
 
                 System.out.println(appointments.size());
+                finish();
 
             }
 
         });
+        days.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.radioButtonSunday:
+                         {
+                            setDayOfTheWeek(1);
+                            System.out.println("The day of the week is "+dayOfTheWeek);
+                            break;
+                        }
+                    case R.id.radioButtonMonday:
+                       {
+                            setDayOfTheWeek(2);
+                           System.out.println("The day of the week is "+dayOfTheWeek);
+                            break;
+                        }
+                    case R.id.radioButtonTuesday:
+                         {
+                            setDayOfTheWeek(3);
+                             System.out.println("The day of the week is "+dayOfTheWeek);
+                            break;
+                        }
+                    case R.id.radioButtonWednesday:
+                       {
+                            setDayOfTheWeek(4);
+                           System.out.println("The day of the week is "+dayOfTheWeek);
+                            break;
+                        }
+                    case R.id.radioButtonThursday:
+                        {
+                            setDayOfTheWeek(5);
+                            System.out.println("The day of the week is "+dayOfTheWeek);
+                            break;
+                        }
+                    case R.id.radioButtonFriday:
+                         {
+                            setDayOfTheWeek(6);
+                             System.out.println("The day of the week is "+dayOfTheWeek);
+                            break;
+                        }
+                    case R.id.radioButtonSaturday:
+                         {
+                            setDayOfTheWeek(7);
+                             System.out.println("The day of the week is "+dayOfTheWeek);
+                            break;
+                        }
+
+            }
+
+        }});
+        Toast.makeText(this,"Day of the week is "+dayOfTheWeek,Toast.LENGTH_LONG).show();
 
 
     }
@@ -48,54 +104,6 @@ public class AddAppointment extends AppCompatActivity {
         return appointments;
     }
 
-    public void onRadioButtonClicked(View v) {
-        boolean checked = ((RadioButton)v).isChecked();
 
-        switch (v.getId()) {
-            case R.id.radioButtonSunday:
-                if (checked) {
-                    setDayOfTheWeek(1);
-                    break;
-                }
-            case R.id.radioButtonMonday:
-                if (checked) {
-                    setDayOfTheWeek(2);
-                    break;
-                }
-            case R.id.radioButtonTuesday:
-                if (checked) {
-                    setDayOfTheWeek(3);
-                    break;
-                }
-            case R.id.radioButtonWednesday:
-                if (checked) {
-                    setDayOfTheWeek(4);
-                    break;
-                }
-            case R.id.radioButtonThursday:
-                if (checked) {
-                    setDayOfTheWeek(5);
-                    break;
-                }
-            case R.id.radioButtonFriday:
-                if (checked) {
-                    setDayOfTheWeek(6);
-                    break;
-                }
-            case R.id.radioButtonSaturday:
-                if(checked) {
-                    setDayOfTheWeek(7);
-                    break;
-                }
-        }
-    }
-
-    /*
-    public void changeVolume(){
-        SilenceEvent se = new SilenceEvent(AddAppointment.this, getAppointment());
-        se.setMuteTime();
-        se.setUnmuteTime();
-    }
-    */
 
 }
