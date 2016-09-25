@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Silent</string>
     <string name="btnAddAppointment">Add an Event</string>
-    <string name="addButton">Add</string>
+    <string name="addButton">+</string>
     <string name="startTime">Start Time</string>
     <string name="textView2">End Time</string>
     <string name="checkBoxMonday">Monday</string>

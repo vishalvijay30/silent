@@ -19,7 +19,7 @@ import java.util.Calendar;
 public class MainScreen extends AppCompatActivity implements Runnable{
 
     public Button add;
-    public Button calendar;
+  //  public Button calendar;
     public Button more;
     public Button sync;
 
@@ -45,16 +45,16 @@ public class MainScreen extends AppCompatActivity implements Runnable{
         });
     }
 
-    public void loadCalendarActivity() {
-        calendar = (Button)findViewById(R.id.calendarButton);
-        calendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent loadCalendar = new Intent(MainScreen.this, CalendarScreen.class);
-                startActivity(loadCalendar);
-            }
-        });
-    }
+//    public void loadCalendarActivity() {
+//        calendar = (Button)findViewById(R.id.calendarButton);
+//        calendar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent loadCalendar = new Intent(MainScreen.this, CalendarScreen.class);
+//                startActivity(loadCalendar);
+//            }
+//        });
+//    }
 
 
     public void getSyncData() {
@@ -88,7 +88,7 @@ public class MainScreen extends AppCompatActivity implements Runnable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         loadAddAppointmentActivity();
-        loadCalendarActivity();
+       // loadCalendarActivity();
 
         getSyncData();
 
