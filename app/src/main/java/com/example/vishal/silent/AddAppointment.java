@@ -10,7 +10,8 @@ import android.widget.TimePicker;
 import java.util.ArrayList;
 
 public class AddAppointment extends AppCompatActivity {
-    public ArrayList<Appointment> appointments = new ArrayList<Appointment>();
+
+    public static ArrayList<Appointment> appointments = new ArrayList<Appointment>();
     Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +25,20 @@ public class AddAppointment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 appointments.add(new Appointment(appName.getText().toString(), timePicker1.getHour(),
-                        timePicker1.getMinute(), timePicker2.getHour(), timePicker2.getMinute(),7));
+                        timePicker1.getMinute(), timePicker2.getHour(), timePicker2.getMinute(), 7));
+
+                System.out.println(appointments.size());
 
             }
         });
 
 
 
+
+
     }
 
-    public ArrayList<Appointment> getAppointment() {
+    public static ArrayList<Appointment> getAppointment() {
         return appointments;
     }
 
