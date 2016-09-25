@@ -26,7 +26,6 @@
         </activity>
         <activity android:name=".AddAppointment" />
         <activity android:name=".CalendarScreen" />
-        <activity android:name=".MoreScreen"></activity>
     </application>
 
 </manifest>

@@ -86,16 +86,4 @@ public class Appointment {
         this.daysOfTheWeek = daysOfTheWeek;
     }
 
-    public int getStartTimeMinuteCorrected() {
-        return startTimeMinute - 1;
-    }
-
-    public int getEndTmeMinuteCorrected() {
-        return endTimeMinute - 1;
-    }
-
-
-    public static void main(String[] args) {
-
-    }
 }

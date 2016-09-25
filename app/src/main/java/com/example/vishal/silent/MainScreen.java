@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 
 public class MainScreen extends AppCompatActivity {
@@ -40,16 +39,7 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
-    public void loadMoreActivity() {
-        more = (Button)findViewById(R.id.moreButton);
-        more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent loadMore = new Intent(MainScreen.this, MoreScreen.class);
-                startActivity(loadMore);
-            }
-        });
-    }
+
     public void getSyncData() {
         sync = (Button) findViewById(R.id.syncButton);
         sync.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +69,7 @@ public class MainScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
         loadAddAppointmentActivity();
         loadCalendarActivity();
-        loadMoreActivity();
+
         getSyncData();
     }
 
